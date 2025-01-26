@@ -1,0 +1,180 @@
+#account-search{
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    width: 750px;
+    height: 50px;
+}
+#account-search input {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 550;
+}
+#account-search button{
+    position: absolute;
+    top: -5.5px;
+    right: 4px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 70px;
+    height: 45px;
+}
+#account-search button i {
+    font-weight: 700;
+}
+
+#account--overview{
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    display: grid;
+    width: 100vw;
+    height: auto;
+    padding-right: 20px;
+    grid-template-areas: 
+    "info sum"
+    "info sum";
+    grid-template-rows: 300px 300px;
+    grid-template-columns: 55vw 25vw;
+    gap: 10px;
+}
+
+.account-1{
+    grid-area: info;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.account-1 .table--container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+}
+.account-1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+.account-1 td {
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.account-1 thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-spacing: 0;
+}
+.account-1 thead tr th{
+    font-size: 18px;
+}
+.account-1 tbody{
+    display: block;
+    max-height: 500px; /* Giới hạn chiều cao bảng */
+    width: 100%;
+}
+.account-1 tbody tr:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+.account-1 tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    top: 0;
+}
+.account-1 thead tr{
+    height: 60px;
+}
+.account-1 th, .account-1 td {
+    padding: 8px;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    table-layout: fixed;
+    /* word-wrap: break-word;  */
+    white-space: nowrap; /* Giữ chữ không bị vỡ dòng */
+    text-overflow: ellipsis; /* Nếu chữ quá dài, nó sẽ có dấu '...' */
+}
+
+.account-1 th:nth-child(1), 
+.account-1 td:nth-child(1) {
+    width: 30px; /* Đặt chiều rộng mong muốn */
+    min-width: 30px;
+    max-width: 30px;
+    text-align: center; /* Căn giữa nội dung */
+}
+.account-1 th:nth-child(2), 
+.account-1 td:nth-child(2) {
+    width: 200px; /* Đặt chiều rộng mong muốn */
+    min-width: 200px;
+    max-width: 400px;
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.account-1 th:nth-child(3), 
+.account-1 td:nth-child(3) {
+    width: 200px; /* Tăng độ rộng cột Email */
+    min-width: 200px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Nếu nội dung dài quá, hiển thị ... */
+    white-space: nowrap;
+}
+.account-1 th:nth-child(4), 
+.account-1 td:nth-child(4) {
+    width: 115px; /* Tăng độ rộng cột Email */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Nếu nội dung dài quá, hiển thị ... */
+    white-space: nowrap;
+}
+
+.account-1 th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.account-1{
+    box-shadow: var(--box-shadow-content);
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.account-2{
+    grid-area: sum;
+    box-shadow: var(--box-shadow-content);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.account-2 div{
+    text-align: left;
+}
+.account-2 div #account-image img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.account-2 div #account-image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

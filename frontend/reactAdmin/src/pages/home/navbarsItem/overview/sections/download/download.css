@@ -1,0 +1,25 @@
+.chart-details{
+    text-align: center;
+    line-height: 1;
+    padding-top: 20px;
+}
+.chart-details h3{
+    font-size: 100px;
+    font-weight: 600;
+}
+/* .chart-details p{
+    font-size: 45px;
+    font-weight: 450;
+    color: rgb(21, 179, 57);
+} */
+.chart-details > p > .ti-arrow-up{
+    font-size: 35px;
+    color: rgb(21, 179, 57);
+}
+.chart-details > p > .ti-arrow-down{
+    font-size: 35px;
+    color: rgb(239, 22, 22);
+}
+.chart-details > i{
+    font-size: 10px;
+}

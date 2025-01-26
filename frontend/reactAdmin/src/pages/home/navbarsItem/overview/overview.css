@@ -1,0 +1,75 @@
+.colorBlack{
+    color: #000;
+}
+.colorWhite{
+    color: #fff;
+}
+.bgBlack{
+    background-color: #000;
+}
+.bgWhite{
+    background-color: #e8e8e8;
+}
+
+.frame{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transition: 2s;
+}
+
+#admin--title{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+#admin--title h1{
+    display: block;
+    float: left;
+}
+
+#admin--overview{
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    display: grid;
+    width: 100vw;
+    height: auto;
+    grid-template-areas: 
+    "download rate booking feedback"
+    "hospital hospital doctor doctor";
+    grid-template-rows: 35vh 50vh;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    gap: 10px;
+}
+
+.section-1{
+    grid-area: download;
+}
+.section-2{
+    grid-area: rate;
+}
+.section-3{
+    grid-area: booking;
+}
+.section-4{
+    grid-area: doctor;
+}
+.section-5{
+    grid-area: hospital;
+}
+.section-6{
+    grid-area: feedback;
+}
+
+.section-1, .section-2, .section-3,.section-4,.section-5,.section-6{
+    box-shadow: var(--box-shadow-content);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}

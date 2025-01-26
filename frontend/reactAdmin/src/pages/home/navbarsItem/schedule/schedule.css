@@ -1,0 +1,136 @@
+#schedule-search{
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    width: 750px;
+    height: 50px;
+}
+#schedule-search input {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 550;
+}
+#schedule-search button{
+    position: absolute;
+    top: -5.5px;
+    right: 4px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 70px;
+    height: 45px;
+}
+#schedule-search button i {
+    font-weight: 700;
+}
+#schedule--overview{
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    display: grid;
+    width: 100vw;
+    height: auto;
+    padding-right: 20px;
+
+    grid-template-areas: 
+    /* "schedule-booking schedule-detail" */
+    "schedule-booking schedule-detail";
+    grid-template-rows: 600px;
+    grid-template-columns: 60vw 20vw;
+    gap: 10px;
+}
+
+.schedule-1{
+    grid-area: schedule-booking;
+    box-shadow: var(--box-shadow-content);
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.schedule-1 .schedule--container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+}
+.schedule-1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+.schedule-1 td {
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.schedule-1 thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-spacing: 0;
+}
+.schedule-1 thead tr th{
+    font-size: 18px;
+}
+.schedule-1 tbody{
+    display: block;
+    max-height: 500px; /* Giới hạn chiều cao bảng */
+    width: 100%;
+}
+.schedule-1 tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    top: 0;
+}
+.schedule-1 thead tr{
+    height: 60px;
+}
+.schedule-1 tbody tr:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+.schedule-1 th, .schedule-1 td {
+    padding: 8px;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    table-layout: fixed;
+    /* word-wrap: break-word;  */
+    white-space: nowrap; /* Giữ chữ không bị vỡ dòng */
+    text-overflow: ellipsis; /* Nếu chữ quá dài, nó sẽ có dấu '...' */
+}
+.schedule-1 th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}   
+
+
+
+.schedule-2{
+    grid-area: schedule-detail;
+    box-shadow: var(--box-shadow-content);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.schedule-2 div h3 {
+    color: rgb(205, 157, 0);
+    text-align: center;
+}
+

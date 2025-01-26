@@ -1,0 +1,42 @@
+#note--overview{
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    display: grid;
+    width: 100vw;
+    height: auto;
+    grid-template-areas: 
+    "download rate booking feedback"
+    "hospital hospital doctor doctor";
+    grid-template-rows: 300px 300px;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    gap: 10px;
+}
+
+.section-1{
+    grid-area: download;
+}
+.section-2{
+    grid-area: rate;
+}
+.section-3{
+    grid-area: booking;
+}
+.section-4{
+    grid-area: doctor;
+}
+.section-5{
+    grid-area: hospital;
+}
+.section-6{
+    grid-area: feedback;
+}
+
+.section-1, .section-2, .section-3,.section-4,.section-5,.section-6{
+    box-shadow: var(--box-shadow-content);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
