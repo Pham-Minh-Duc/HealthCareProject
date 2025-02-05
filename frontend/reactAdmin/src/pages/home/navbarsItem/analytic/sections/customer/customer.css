@@ -9,14 +9,19 @@
 
 .customer--frame__content.item-1{
     grid-row: 1/3;
-    border: solid black 1px;
     width: 100%;
+    padding: 60px 20px;
 }
 .customer--frame__content.item-2{
-    border: solid black 1px;
-    
+    text-align: center;
+}
+.customer--frame__content.item-2 h2{
+    color: rgb(0, 119, 26);
+    font-size: 70px;
+}
+.customer--frame__content.item-2 p{
+    font-size: 80px;
 }
 .customer--frame__content.item-3{
-    border: solid black 1px;
     
 }
