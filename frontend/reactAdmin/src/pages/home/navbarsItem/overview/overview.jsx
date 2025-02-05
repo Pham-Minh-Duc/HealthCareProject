@@ -6,8 +6,7 @@ import Booking from "./sections/booking/booking";
 import Doctor from "./sections/doctor/doctor";
 import Hospital from "./sections/hospital/hospital"
 import Feedback from "./sections/feedback/feedback";
-import Time from "../../../../utils/time";
-
+import Title from "../../../../components/title/titleComponent";
 
 export default function Admin() {
 
@@ -16,10 +15,7 @@ export default function Admin() {
     return (
         <>
         <div className={`frame ${activeTheme ? 'bgBlack' : 'bgWhite'}`}>
-                <div id="admin--title" className={`${activeTheme ? "colorWhite" : "colorBlack"}`}>
-                    <h1>Dash Board</h1>
-                    <Time style={{display: "block"}}/>
-                </div>
+                <Title/>
                 <div id="admin--overview">
                     <div className = "section-1">
                         <Download/>

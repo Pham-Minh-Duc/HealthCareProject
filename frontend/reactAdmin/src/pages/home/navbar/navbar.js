@@ -9,6 +9,7 @@ import Schedule from "../navbarsItem/schedule/schedule";
 import Note from "../navbarsItem/note/note";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState("admin");
   const { activeTheme, toggleTheme } = useTheme();
@@ -98,6 +99,7 @@ export default function Navbar() {
               </motion.div>
             )}
 
+
             {activeTab === "account" && (
               <motion.div
                 key="account"
@@ -110,6 +112,7 @@ export default function Navbar() {
                 <Account />
               </motion.div>
             )}
+
 
             {activeTab === "schedule" && (
               <motion.div
@@ -124,6 +127,7 @@ export default function Navbar() {
               </motion.div>
             )}
 
+
             {activeTab === "doctors" && (
               <motion.div
                 key="doctors"
@@ -136,6 +140,7 @@ export default function Navbar() {
                 <Doctor />
               </motion.div>
             )}
+
 
             {activeTab === "analytics" && (
               <motion.div
@@ -150,6 +155,7 @@ export default function Navbar() {
               </motion.div>
             )}
 
+
             {activeTab === "note" && (
               <motion.div
                 key="note"
@@ -162,6 +168,8 @@ export default function Navbar() {
                 <Note />
               </motion.div>
             )}
+
+
           </AnimatePresence>
         </div>
       </div>

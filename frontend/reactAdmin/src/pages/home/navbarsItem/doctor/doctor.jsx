@@ -1,9 +1,10 @@
 import { useTheme } from "../../../../context/themeContext";
 import './doctor.css';
-import Time from "../../../../utils/time";
 import dataDoctors from "../../../../services/data/dataDoctor";
 import dataHospitals from "../../../../services/data/dataHospital"
 import { useState, useRef, useEffect } from "react";
+import Title from "../../../../components/title/titleComponent";
+import Search from "../../../../components/search/searchComponent";
 
 export default function Doctor() {
     const { activeTheme } = useTheme();
@@ -30,10 +31,8 @@ export default function Doctor() {
         return (
             <>
             <div className={`frame ${activeTheme ? 'bgBlack' : 'bgWhite'}`}>
-                <div id="admin--title" className={`${activeTheme ? "colorWhite" : "colorBlack"}`}>
-                <h1>Dash Board</h1>
-                    <Time style={{display: "block"}}/>
-                </div>
+                <Title/>
+                <Search/>
                 <div id="doctor--overview">
                     <div className = "doctor-1">
                         <div className="doctor--container">

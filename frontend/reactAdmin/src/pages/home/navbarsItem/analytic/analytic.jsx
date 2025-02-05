@@ -1,11 +1,12 @@
 import { useTheme } from "../../../../context/themeContext";
 import "./analytic.css";
-import Time from "../../../../utils/time";
+import Search from "../../../../components/search/searchComponent"
 import { useState } from "react";
 import Customer from "./sections/customer/customer"
 import Doctor from "./sections/doctor/doctor"
 import Hospital from "./sections/hospital/hospital";
 import Predict from "./sections/predict/predict"
+import Title from "../../../../components/title/titleComponent";
 
 export default function Analytic() {
   const { activeTheme } = useTheme();
@@ -17,13 +18,8 @@ export default function Analytic() {
   return (
     <>
       <div className={`frame ${activeTheme ? "bgBlack" : "bgWhite"}`}>
-        <div
-          id="admin--title"
-          className={`${activeTheme ? "colorWhite" : "colorBlack"}`}
-        >
-          <h1>Dash Board</h1>
-          <Time style={{ display: "block" }} />
-        </div>
+        <Title/>
+        <Search/>
         <div className="analytic--overview">
           <div className="analytic--navbar">
             <div onClick={() => handleTabAna("customer")}>

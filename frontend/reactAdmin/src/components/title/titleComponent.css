@@ -1,0 +1,12 @@
+#titleComponent{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+#titleComponent h1{
+    display: block;
+    float: left;
+}

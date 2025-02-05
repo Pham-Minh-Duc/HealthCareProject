@@ -1,10 +1,9 @@
 import { useTheme } from "../../../../context/themeContext";
 import './schedule.css';
-import Time from "../../../../utils/time";
 import dataSchedule from "../../../../services/data/dataSchedule";
 import { useState } from "react";
-
-
+import Search from "../../../../components/search/searchComponent";
+import Title from "../../../../components/title/titleComponent";
 export default function Schedule(){
     const [selectedSchedule, setSelectedSchedule] = useState(null);
 
@@ -13,14 +12,8 @@ export default function Schedule(){
     return (
         <>
             <div className={`frame ${activeTheme ? 'bgBlack' : 'bgWhite'}`}>
-                <div id="admin--title" className={`${activeTheme ? "colorWhite" : "colorBlack"}`}>
-                    <h1>Dash Board</h1>
-                    <Time style={{display: "block"}}/>
-                </div>
-                <div id="schedule-search">
-                    <input type="text" placeholder="search"/>
-                    <button><i className="ti-search"></i></button>
-                </div>
+                <Title/>
+                <Search/>
                 <div id="schedule--overview">
                     <div className = "schedule-1">
                         {/* <h1>danh sách đặt lịch</h1> */}

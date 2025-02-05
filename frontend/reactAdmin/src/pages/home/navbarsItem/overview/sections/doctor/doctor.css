@@ -1,9 +1,0 @@
-.chart-container{
-    width: 100%; /* Chiều rộng theo khung bên ngoài */
-    height: 100%; /* Chiều cao theo khung bên ngoài */
-    max-width: 100%; /* Giới hạn chiều rộng tối đa */
-    aspect-ratio: 16/9; /* Đảm bảo tỷ lệ khung hình (16:9 hoặc tùy chỉnh) */
-    padding: 20px; /* Tạo khoảng cách với viền trắng */
-    box-sizing: border-box; /* Bao gồm padding trong kích thước container */
-    overflow: hidden;
-}

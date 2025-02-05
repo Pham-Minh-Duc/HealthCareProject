@@ -1,31 +1,4 @@
-#account-search{
-    position: absolute;
-    top: 20px;
-    right: 60px;
-    width: 750px;
-    height: 50px;
-}
-#account-search input {
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    padding: 10px 20px;
-    outline: none;
-    font-size: 16px;
-    font-weight: 550;
-}
-#account-search button{
-    position: absolute;
-    top: -5.5px;
-    right: 4px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    width: 70px;
-    height: 45px;
-}
-#account-search button i {
-    font-weight: 700;
-}
+
 
 #account--overview{
     position: absolute;

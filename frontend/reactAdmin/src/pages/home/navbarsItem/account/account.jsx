@@ -1,9 +1,9 @@
 import { useTheme } from "../../../../context/themeContext";
 import { useState } from "react";
 import './account.css'
-import Time from "../../../../utils/time";
 import usersData from "../../../../services/data/dataUser";
-
+import Search from "../../../../components/search/searchComponent";
+import Title from "../../../../components/title/titleComponent";
 
 export default function Account() {
 
@@ -14,14 +14,8 @@ export default function Account() {
         return (
             <>
             <div className={`frame ${activeTheme ? 'bgBlack' : 'bgWhite'}`}>
-                <div id="admin--title" className={`${activeTheme ? "colorWhite" : "colorBlack"}`}>
-                    <h1>Dash Board</h1>
-                    <Time style={{display: "block"}}/>
-                </div>
-                <div id="account-search">
-                    <input type="text" placeholder="search"/>
-                    <button><i className="ti-search"></i></button>
-                </div>
+                <Title/>
+                <Search/>
                 <div id="account--overview">
                     <div className = "account-1">
                         <div className="table--container">
