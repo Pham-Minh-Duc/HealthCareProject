@@ -1,17 +1,26 @@
 import "./signUp.css";
 import React, { useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 export default function SignUp() {
-  const navigate = useNavigate();
+
+  const dataLogin = [
+    {
+      email: "123",
+      password: "123"
+    }
+  ]
+
+  const navigate = useNavigate()
 
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const [email, setEmail] = useState("");
   const [isPressed, setIsPressed] = useState(false);
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -25,28 +34,24 @@ export default function SignUp() {
     setIsPressed(false); // Nút bật lên
   };
 
+  const handleSubmit = () => {
+    const user = dataLogin.find((user) => 
+      user.email === email && user.password === password
+    )
 
-    const handleLogin = async (e) => {
-      e.preventDefault();
+    if(user){
+      localStorage.setItem("isLoggingIn", "true")
+      toast.success("Đăng nhập thành công !", { autoClose: 2000})
+      alert("Đăng nhập thành công")
+      setTimeout(() => {
+        navigate("/admin/dashboard")
+      }, 1000)
+    }
+    else{
+      toast.error("Email hoặc mật khẩu không đúng", { autoClose: 2000 })
+    }
+  }
 
-      try {
-        const response = await axios.post("http://localhost:9090/login", {
-          email,
-          password,
-        });
-
-        if (response.data.success || response.status === 200) {
-          toast.success("Login successful!");
-          navigate("/dashboard");
-        }
-      } catch (error) {
-        if (error.response && error.response.status === 401) {
-          toast.error("Invalid email or password!");
-        } else {
-          toast.error("An error occurred. Please try again.");
-        }
-      }
-    };
   return (
     <div id="bg--admin">
       <div id="frame">
@@ -77,14 +82,14 @@ export default function SignUp() {
           />
           <div id="showpw">
             <input
-              onclick="showPassword"
+              onclick={showPassword}
               type="checkbox"
               onClick={togglePasswordVisibility}
             />
             <label>Show Password</label>
           </div>
           <button
-            onClick={handleLogin}
+            onClick={handleSubmit}
             className={`${isPressed ? "pressed" : ""}`}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}

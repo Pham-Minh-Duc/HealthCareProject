@@ -1,0 +1,47 @@
+[
+    {
+        "id" : "chuyenKhoa",
+        "name" : "khám chuyên khoa",
+        "icon" : "medication"
+    },
+    {
+        "id" : "tuXa",
+        "name" : "khám từ xa",
+        "icon" : "add_ic_call"
+    },
+    {
+        "id" : "tongQuat",
+        "name" : "khám tổng quát",
+        "icon" : "app_shortcut"
+    },
+    {
+        "id" : "yHoc",
+        "name" : "xét nghiệm y học",
+        "icon" : "vaccines"
+    },
+    {
+        "id" : "tinhThan",
+        "name" : "sức khỏe tinh thần",
+        "icon" : "psychology"
+    },
+    {
+        "id" : "nhaKhoa",
+        "name" : "khám nha khoa",
+        "icon" : "masks"
+    },
+    {
+        "id" : "phauThuat",
+        "name" : "Gói phẩu thuật",
+        "icon" : "night_shelter"
+    },
+    {
+        "id" : "tieuDuong",
+        "name" : "Sống khỏe tiểu đường",
+        "icon" : "bloodtype"
+    },
+    {
+        "id" : "ganBan",
+        "name": "Y tế gần bạn",
+        "icon": "local_hospital"
+    }
+]

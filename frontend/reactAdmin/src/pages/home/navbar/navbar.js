@@ -8,15 +8,45 @@ import Doctor from "../navbarsItem/doctor/doctor";
 import Schedule from "../navbarsItem/schedule/schedule";
 import Note from "../navbarsItem/note/note";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert"
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import CSS mặc định
+import "./confirm-alert.css"; // Import file CSS tùy chỉnh
+
 
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState("admin");
   const { activeTheme, toggleTheme } = useTheme();
 
+  const navigate = useNavigate()
+
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  const handleLogout = () => {
+    console.log("mở logout")
+    confirmAlert({
+      title: "xác nhận đăng xuất",
+      message: "bạn có chắc chắn muốn đăng xuất ?",
+      buttons: [
+        {
+          label: "có",
+          onClick: () => {
+            localStorage.removeItem("token")
+            navigate("/login", { replace: "true"})
+          }
+        },
+        {
+          label: "không",
+          onclick: () => {
+            console.log("cancel")
+          }
+        }
+      ]
+    })
+  }
 
   return (
     <>
@@ -67,7 +97,7 @@ export default function Navbar() {
                 <i className="ti-bell"></i>Notification
               </li>
             </a>
-            <a href="#logout">
+            <a href="#" onClick={handleLogout}>
               <li className="items">
                 <i className="ti-back-left"></i>Log out
               </li>
