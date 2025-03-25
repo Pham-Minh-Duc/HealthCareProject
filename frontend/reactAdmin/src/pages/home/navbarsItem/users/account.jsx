@@ -1,7 +1,6 @@
 import { useTheme } from "../../../../context/themeContext";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import './account.css'
-import usersData from "../../../../services/data/dataUser";
 import Search from "../../../../components/search/searchComponent";
 import Title from "../../../../components/title/titleComponent";
 
@@ -10,6 +9,28 @@ export default function Account() {
     const { activeTheme } = useTheme();
 
     const [selectedUsers, setSelectedUsers] = useState(null);
+
+
+    const [users, setUsers] = useState([])
+    const [error, setError] = useState("")
+
+    useEffect(() => {
+      const fetchUser = async () => {
+        try{
+          const response = await fetch("http://localhost:8080/user")
+          if(!response.ok){
+            throw new Error("lỗi")
+          }
+          const data = await response.json()
+          setUsers(data)
+        }
+        catch(e){
+          setError(e.message)
+        }
+      }
+      fetchUser()
+    }, [])
+
 
         return (
             <>
@@ -31,7 +52,7 @@ export default function Account() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {usersData.map((user) => (
+                                {users.map((user) => (
                                 <tr key={user.id} onClick={() => setSelectedUsers(user)}>
                                 <td>{user.id}</td>
                                 <td>{user.name}</td>

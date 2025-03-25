@@ -2,29 +2,19 @@ import "./signUp.css";
 import React, { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 
 export default function SignUp() {
-
-  const dataLogin = [
-    {
-      email: "123",
-      password: "123"
-    }
-  ]
 
   const navigate = useNavigate()
 
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
   const [isPressed, setIsPressed] = useState(false);
 
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   const handleMouseDown = () => {
     setIsPressed(true); // Nút bị nhấn
@@ -34,23 +24,53 @@ export default function SignUp() {
     setIsPressed(false); // Nút bật lên
   };
 
-  const handleSubmit = () => {
-    const user = dataLogin.find((user) => 
-      user.email === email && user.password === password
-    )
+  
+  
+  const handleSubmit = async (e) => {
 
-    if(user){
-      localStorage.setItem("isLoggingIn", "true")
-      toast.success("Đăng nhập thành công !", { autoClose: 2000})
-      alert("Đăng nhập thành công")
-      setTimeout(() => {
-        navigate("/admin/dashboard")
-      }, 1000)
+    e.preventDefault();
+    setError("");
+  
+    try {
+      console.log("Dữ liệu gửi lên:", { email, password });
+
+      const response = await fetch("http://localhost:8080/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+        credentials: "include",
+        body: JSON.stringify({ email, password })
+      });
+  
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || "Server error");
+      }
+  
+      const data = await response.json();
+      console.log("Raw response:", response);
+
+  
+      if (data.success) {
+        alert("Đăng nhập thành công")
+        navigate("/admin/dashboard");
+     } else {
+        setError(data.message || "Email hoặc mật khẩu không đúng");
+        alert(error)
+     }
+     
+      
+    } 
+    catch (err) {
+
+      console.error("Lỗi khi gửi request:", err);
+      setError("Lỗi kết nối đến server");
+    
     }
-    else{
-      toast.error("Email hoặc mật khẩu không đúng", { autoClose: 2000 })
-    }
-  }
+  };
+  
 
   return (
     <div id="bg--admin">
@@ -82,9 +102,9 @@ export default function SignUp() {
           />
           <div id="showpw">
             <input
-              onclick={showPassword}
+              checked={!showPassword}
+              onChange={() => setShowPassword((prev) => !prev)}
               type="checkbox"
-              onClick={togglePasswordVisibility}
             />
             <label>Show Password</label>
           </div>

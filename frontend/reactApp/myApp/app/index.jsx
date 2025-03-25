@@ -106,8 +106,8 @@ export default function HomeScreen() {
                 <View style={styles.serviceContainer}>
                     {serviceData.map((service) => (
                       <TouchableOpacity key={service.id} style={styles.serviceItem} onPress={() => router.push(`/ui/serviceUI/${service.id}`)}>
-                        <MaterialIcons name={service.icon} size={30} color="white" padding="4"/>
-                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center"}}> {service.name}</Text>
+                        <MaterialIcons name={service.icon} size={30} color="#DAF4FF" padding="4"/>
+                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center", color: "#DAF4FF"}}> {service.name}</Text>
                       </TouchableOpacity>
                     ))}
                 </View>
@@ -117,8 +117,8 @@ export default function HomeScreen() {
                 <View style={styles.serviceContainer}>
                     {serviceData.map((service) => (
                       <TouchableOpacity key={service.id} style={styles.serviceItem} onPress={() => router.push(`/ui/serviceUI/${service.id}`)}>
-                        <MaterialIcons name={service.icon} size={30} color="white" padding="4"/>
-                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center"}}> {service.name}</Text>
+                        <MaterialIcons name={service.icon} size={30} color="#DAF4FF" padding="4"/>
+                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center", color: "#DAF4FF"}}> {service.name}</Text>
                       </TouchableOpacity>
                     ))}
                 </View>
@@ -128,8 +128,8 @@ export default function HomeScreen() {
                 <View style={styles.serviceContainer}>
                     {serviceData.map((service) => (
                       <TouchableOpacity key={service.id} style={styles.serviceItem} onPress={() => router.push(`/ui/serviceUI/${service.id}`)}>
-                        <MaterialIcons name={service.icon} size={30} color="white" padding="4"/>
-                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center"}}> {service.name}</Text>
+                        <MaterialIcons name={service.icon} size={30} color="#DAF4FF" padding="4"/>
+                        <Text key={service.id} style={{paddingLeft: 5, width: "110", alignSelf: "center", color: "#DAF4FF"}}> {service.name}</Text>
                       </TouchableOpacity>
                     ))}
                 </View>
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   home: {
     flex: 1,
     display: "flex",
-    backgroundColor: "white",
+    backgroundColor: "#ffffff",
     width: "100%",
     height: "100%",
     paddingBottom: 50
@@ -214,6 +214,7 @@ const styles = StyleSheet.create({
   },
   navBar: {
     position: "absolute",
+    backgroundColor: "white",
     left: 0,
     right: 0,
     bottom: 0,
@@ -231,7 +232,7 @@ const styles = StyleSheet.create({
     fontSize: 11
   },
   serviceContainer: {
-    backgroundColor: "#e5e5fd",
+    backgroundColor: "#D6EAF8",
     borderRadius: 20,
     height: "100%",
     flexDirection: "row",
@@ -239,7 +240,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   serviceItem: {
-    backgroundColor: "#ffddc2",
+    backgroundColor: "#51A7BF",
     width: "46%",
     height: "60",
     borderRadius: 20,

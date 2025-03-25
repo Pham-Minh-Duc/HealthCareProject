@@ -26,13 +26,13 @@
   text-align: center;
   }
   
-  /* Căn giữa các nút theo chiều dọc */
+  
   .react-confirm-alert-button-group {
     display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
   align-items: center; /* Căn giữa theo chiều dọc */
-  width: 100%; /* Đảm bảo full width để căn giữa */
-  margin-top: 20px; /* Thêm khoảng cách giữa nội dung và nút */
+  width: 100%;
+  margin-top: 20px;
   }
   
   /* Nút xác nhận */

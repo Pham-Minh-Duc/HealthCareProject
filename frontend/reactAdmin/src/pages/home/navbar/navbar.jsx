@@ -1,8 +1,8 @@
 import "./navbar.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "../../../context/themeContext";
 import Overview from "../navbarsItem/overview/overview";
-import Account from "../navbarsItem/account/account";
+import Account from "../navbarsItem/users/account";
 import Analytic from "../navbarsItem/analytic/analytic";
 import Doctor from "../navbarsItem/doctor/doctor";
 import Schedule from "../navbarsItem/schedule/schedule";
@@ -48,6 +48,7 @@ export default function Navbar() {
     })
   }
 
+
   return (
     <>
       <div id="navbar">
@@ -68,7 +69,7 @@ export default function Navbar() {
               <li
                 className={`items ${activeTab === "account" ? "active" : ""}`}
               >
-                <i className="ti-user"></i>Account
+                <i className="ti-user"></i>Users
               </li>
             </a>
             <a href="#schedule" onClick={() => handleTabClick("schedule")}>
@@ -99,7 +100,8 @@ export default function Navbar() {
             </a>
             <a href="#" onClick={handleLogout}>
               <li className="items">
-                <i className="ti-back-left"></i>Log out
+                <i className="ti-back-left"></i>
+                Log out
               </li>
             </a>
           </ol>

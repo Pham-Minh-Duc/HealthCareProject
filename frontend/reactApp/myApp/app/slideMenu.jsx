@@ -76,13 +76,13 @@ const SlideMenu = ({isOpen, onClose}) => {
                                     }}>Login</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => router.push("/ui/homePage")}>
-                                    <Text style={{ marginTop: 20, fontSize: 18 }}>🏠 Trang chủ</Text>
+                                    <Text style={{ marginTop: 20, fontSize: 18 }}>Trang chủ</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => router.push("")}>
-                                    <Text style={{ marginTop: 20, fontSize: 18 }}>📂 Đặt Lịch Khám</Text>
+                                    <Text style={{ marginTop: 20, fontSize: 18 }}>Đặt Lịch Khám</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => router.push("")}>
-                                    <Text style={{ marginTop: 20, fontSize: 18 }}>📂 Dành cho bệnh nhân</Text>
+                                    <Text style={{ marginTop: 20, fontSize: 18 }}>Dành cho bệnh nhân</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => router.push("")}>
                                     <Text style={{ marginTop: 20, fontSize: 18 }}>📂 Vai Trò của Healthcare Booking</Text>

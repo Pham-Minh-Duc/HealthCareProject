@@ -9,9 +9,10 @@ import Search from "../../../../components/search/searchComponent";
 export default function Doctor() {
     const { activeTheme } = useTheme();
 
+
     const [selectedHospital, setSelectedHospital] = useState(null)
     const [firstHover, setFirstHover] = useState(true);
-    // const [selectedHospital, setSelectedHospital] = useState(null); 
+
     const [getDoctor, setDoctor] = useState(null);
 
     const popupRef = useRef(null);
@@ -28,6 +29,32 @@ export default function Doctor() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+
+    const [allDoctor, setAllDoctor] = useState("")
+    const [allHospital, setAllHospital] = useState("")
+
+
+    useEffect((() => {
+        const getHospital = async () => {
+            const response = await Promise.all([
+                fetch("http://localhost:8080/doctor"),
+                fetch("http://localhost:8080/hospital")
+            ]) 
+            if(!response.ok){
+                console.log("Error")
+            }
+            else{
+                const doctor = await response.json()
+                const hospital = await response.json()
+
+                setAllDoctor(doctor)
+                setAllHospital(hospital)
+            }
+        }
+        getHospital()
+    }),[])
+
         return (
             <>
             <div className={`frame ${activeTheme ? 'bgBlack' : 'bgWhite'}`}>
@@ -50,15 +77,15 @@ export default function Doctor() {
                                 </thead>
                                 <tbody>
                                    {
-                                    dataDoctors.map((data) => (
-                                        <tr key={data.id} onClick={() => setDoctor(data)}>
-                                        <td>{data.id}</td>
-                                        <td>{data.name}</td>
-                                        <td>{data.gender}</td>
-                                        <td>{data.birthday}</td>
-                                        <td>{data.address}</td>
-                                        <td>{data.specially}</td>
-                                        <td>{data.hospital}</td>
+                                    dataDoctors.map((dt) => (
+                                        <tr key={dt.id} onClick={() => setDoctor(dt)}>
+                                        <td>{dt.id}</td>
+                                        <td>{dt.name}</td>
+                                        <td>{dt.gender}</td>
+                                        <td>{dt.birthday}</td>
+                                        <td>{dt.address}</td>
+                                        <td>{dt.specially}</td>
+                                        <td>{dt.hospital}</td>
                                         </tr>
                                     ))
                                    }
@@ -67,7 +94,7 @@ export default function Doctor() {
                         </div>
                     </div>
                     <div className = "doctor-2">
-                        {getDoctor ? (
+                        {allDoctor ? (
                             <div id="doctor-detail">
                                 <div id="doctor-image">
                                     <img src={getDoctor.avatar} alt="" />
